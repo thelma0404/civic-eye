@@ -1,0 +1,11 @@
+target/
+!.mvn/wrapper/maven-wrapper.jar
+*.class
+*.log
+.idea/
+*.iml
+.DS_Store
+data/
+uploads/issues/*
+uploads/work-proof/*
+!uploads/**/.gitkeep

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Create account · Civic Eye</title>
+  <link rel="icon" href="/images/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/login.css">
+</head>
+<body class="auth" data-page="register">
+<aside class="auth-aside">
+  <a class="brand" href="/">
+    <span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>
+    <span><strong>Civic Eye</strong><small>Citizen portal</small></span>
+  </a>
+  <div>
+    <h2>Be the eyes of your city.</h2>
+    <p>Create a free account to report issues in your area and get notified at every step until they are fixed.</p>
+    <ul>
+      <li>Takes less than a minute</li>
+      <li>Track all your complaints in one place</li>
+      <li>Rate the service once work is done</li>
+    </ul>
+  </div>
+  <small class="foot-note">Civic Eye</small>
+</aside>
+<main class="auth-main">
+  <form class="auth-form" id="authForm" novalidate>
+    <h1>Create your account</h1>
+    <p class="sub">Join to start reporting civic issues.</p>
+    <div class="alert" id="alert" role="alert"></div>
+    <div class="field"><label for="name">Full name</label><input id="name" name="name" autocomplete="name" maxlength="100" required></div>
+    <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+    <div class="two-col">
+      <div class="field"><label for="phone">Phone (optional)</label><input id="phone" name="phone" type="tel" autocomplete="tel" maxlength="20"></div>
+      <div class="field"><label for="address">Area / address (optional)</label><input id="address" name="address" autocomplete="street-address" maxlength="255"></div>
+    </div>
+    <div class="two-col">
+      <div class="field"><label for="password">Password</label><input id="password" name="password" type="password" autocomplete="new-password" minlength="6" required></div>
+      <div class="field"><label for="confirmPassword">Confirm password</label><input id="confirmPassword" name="confirmPassword" type="password" autocomplete="new-password" required></div>
+    </div>
+    <button class="btn btn-block btn-lg" type="submit">Create account</button>
+    <p class="auth-switch">Already have an account? <a href="/login">Log in</a></p>
+  </form>
+</main>
+<script src="/js/common.js"></script>
+<script src="/js/login.js"></script>
+</body>
+</html>

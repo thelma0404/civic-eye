@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard · Civic Eye Worker</title>
+  <link rel="icon" href="/images/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/worker.css">
+</head>
+<body class="app role-worker" data-role="worker" data-page="dashboard">
+<aside class="sidebar" id="sidebar">
+  <a class="brand" href="/worker/dashboard">
+    <span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>
+    <span><strong>Civic Eye</strong><small>Field worker</small></span>
+  </a>
+  <nav>
+    <a class="nav-link active" href="/worker/dashboard"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg><span>Dashboard</span></a>
+    <a class="nav-link" href="/worker/complaints"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V4h6v3M3 13h18"/></svg><span>Assigned complaints</span></a>
+    <a class="nav-link" href="/worker/history"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Work history</span></a>
+    <a class="nav-link" href="/worker/notifications"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9M13.7 21a2 2 0 0 1-3.4 0"/></svg><span>Notifications</span></a>
+    <a class="nav-link" href="/worker/profile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg><span>Profile</span></a>
+  </nav>
+  <button class="nav-link" type="button" data-logout><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 4h4v16h-4M10 17l5-5-5-5M15 12H3"/></svg><span>Log out</span></button>
+</aside>
+<div class="main">
+  <header class="topbar">
+    <button class="menu-btn" type="button" data-menu aria-label="Open menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    <h1>Dashboard</h1>
+    <a class="bell" href="/worker/notifications" aria-label="Notifications"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9M13.7 21a2 2 0 0 1-3.4 0"/></svg><span class="badge-dot" id="notifCount" hidden></span></a>
+    <div class="user-chip" id="userChip"><span class="avatar">…</span></div>
+  </header>
+  <main class="content">
+    <section class="welcome">
+      <div>
+        <h2>Good to see you, <span id="welcomeName">there</span></h2>
+        <p>Here is the work assigned to you. Start a job, add progress notes and upload a photo when it is done.</p>
+      </div>
+      <a class="btn btn-lg" href="/worker/complaints">View my jobs</a>
+    </section>
+
+    <section class="grid grid-4 mt">
+      <div class="card stat tone-ochre">
+        <div class="stat-top"><span class="stat-label">New, not started</span><span class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V4h6v3M3 13h18"/></svg></span></div>
+        <div class="stat-value" id="statAssigned">–</div>
+      </div>
+      <div class="card stat tone-bark">
+        <div class="stat-top"><span class="stat-label">In progress</span><span class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span></div>
+        <div class="stat-value" id="statProgress">–</div>
+      </div>
+      <div class="card stat tone-slate">
+        <div class="stat-top"><span class="stat-label">Awaiting review</span><span class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></span></div>
+        <div class="stat-value" id="statReview">–</div>
+      </div>
+      <a class="card stat" href="/worker/history">
+        <div class="stat-top"><span class="stat-label">Approved jobs</span><span class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span></div>
+        <div class="stat-value" id="statDone">–</div>
+      </a>
+    </section>
+
+    <section class="mt">
+      <div class="card-head"><h2>Current assignments</h2><a class="small" href="/worker/complaints">See all</a></div>
+      <div class="task-grid" id="activeList"><p class="muted">Loading…</p></div>
+    </section>
+  </main>
+</div>
+<script src="/js/common.js"></script>
+<script src="/js/worker.js"></script>
+</body>
+</html>

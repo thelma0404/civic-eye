@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Log in · Civic Eye</title>
+  <link rel="icon" href="/images/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/login.css">
+</head>
+<body class="auth" data-page="login">
+<aside class="auth-aside">
+  <a class="brand" href="/">
+    <span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>
+    <span><strong>Civic Eye</strong><small>Citizen portal</small></span>
+  </a>
+  <div>
+    <h2>Your neighbourhood, fixed faster.</h2>
+    <p>Report potholes, garbage, water leaks and broken streetlights, then track every step until they are resolved.</p>
+    <ul>
+      <li>Photo-backed reports</li>
+      <li>Automatic categorisation and priority</li>
+      <li>Live status updates and notifications</li>
+    </ul>
+  </div>
+  <small class="foot-note">Civic Eye</small>
+</aside>
+<main class="auth-main">
+  <form class="auth-form" id="authForm" novalidate>
+    <h1>Welcome back</h1>
+    <p class="sub">Log in to report and track civic issues.</p>
+    <div class="alert" id="alert" role="alert"></div>
+    <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+    <div class="field"><label for="password">Password</label><input id="password" name="password" type="password" autocomplete="current-password" required></div>
+    <button class="btn btn-block btn-lg" type="submit">Log in</button>
+    <p class="auth-switch">New here? <a href="/register">Create an account</a></p>
+    <p class="auth-switch small"><a href="/worker/login">Field worker login</a> · <a href="/admin/login">Admin login</a></p>
+  </form>
+</main>
+<script src="/js/common.js"></script>
+<script src="/js/login.js"></script>
+</body>
+</html>

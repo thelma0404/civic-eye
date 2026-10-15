@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Civic Eye · Report, track and resolve civic issues</title>
+  <link rel="icon" href="/images/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="landing">
+
+<header class="nav-top">
+  <a class="brand" href="/">
+    <span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>
+    <span><strong>Civic Eye</strong><small>Report · Track · Resolve</small></span>
+  </a>
+  <nav class="row">
+    <a class="nav-plain" href="/worker/login">Field workers</a>
+    <a class="nav-plain" href="/admin/login">Admin</a>
+    <a class="btn btn-outline" href="/login">Log in</a>
+    <a class="btn" href="/register">Get started</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div>
+    <span class="eyebrow">For citizens, field teams and city administrators</span>
+    <h1>Report a civic issue. <span>Watch it get fixed.</span></h1>
+    <p>Potholes, overflowing drains, broken streetlights, uncollected garbage. Snap a photo, drop the location and follow every step until the job is done.</p>
+    <div class="row">
+      <a class="btn btn-lg" href="/register">Report an issue</a>
+      <a class="btn btn-outline btn-lg" href="/login">Track my complaints</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="mock-card">
+      <div class="row"><span class="small muted">Complaint #1042 · Roads &amp; Potholes</span><span class="spacer"></span><span class="prio prio-HIGH">HIGH</span></div>
+      <h3>Deep pothole near the bus stop</h3>
+      <p class="small muted">Main Road, opposite the City Library</p>
+      <div class="timeline">
+        <div class="tl-step done"><div class="tl-dot"></div>Submitted</div>
+        <div class="tl-step done"><div class="tl-dot"></div>Assigned</div>
+        <div class="tl-step done"><div class="tl-dot"></div>In progress</div>
+        <div class="tl-step"><div class="tl-dot"></div>Resolved</div>
+      </div>
+      <div class="mock-worker">
+        <span class="avatar">RK</span>
+        <div><strong>Ravi K.</strong><div class="small muted">On site · started 2 h ago</div></div>
+        <span class="badge b-progress">In progress</span>
+      </div>
+    </div>
+    <div class="mock-float"><strong>Auto-categorised</strong><span class="small">Roads &amp; Potholes · 92% match</span></div>
+  </div>
+</section>
+
+<section class="portals">
+  <a class="card portal" href="/login">
+    <span class="portal-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span>
+    <h3>Citizens</h3>
+    <p>Report issues with photos and location, follow progress live and rate the fix once it is done.</p>
+    <span class="go">Citizen login →</span>
+  </a>
+  <a class="card portal worker" href="/worker/login">
+    <span class="portal-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V4h6v3M3 13h18"/></svg></span>
+    <h3>Field workers</h3>
+    <p>See your assigned jobs, update progress from the field and upload proof of completed work.</p>
+    <span class="go">Worker login →</span>
+  </a>
+  <a class="card portal admin" href="/admin/login">
+    <span class="portal-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span>
+    <h3>Administrators</h3>
+    <p>Assign work, verify proof, broadcast updates and track performance with reports and an assistant.</p>
+    <span class="go">Admin login →</span>
+  </a>
+</section>
+
+<section class="how">
+  <h2>How it works</h2>
+  <ol class="steps">
+    <li><span>1</span><strong>Report</strong><p>Describe the problem, add a photo and the location.</p></li>
+    <li><span>2</span><strong>Assign</strong><p>The issue is categorised and an admin sends the right field worker.</p></li>
+    <li><span>3</span><strong>Fix &amp; prove</strong><p>The worker fixes it and uploads a photo as proof.</p></li>
+    <li><span>4</span><strong>Verify &amp; rate</strong><p>The admin verifies the work and you rate the service.</p></li>
+  </ol>
+</section>
+
+<footer class="foot">Civic Eye · Spring Boot · MySQL</footer>
+</body>
+</html>

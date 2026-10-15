@@ -1,0 +1,31 @@
+/* Worker portal: olive moss with bark and ochre accents */
+.role-worker {
+  --primary: #5b6b2e;
+  --primary-dark: #45531f;
+  --primary-soft: #eef2d8;
+  --sidebar-active-bg: #eef2d8;
+  --sidebar-active-ink: #3d4a19;
+}
+.role-worker .brand-mark { background: linear-gradient(140deg, #5b6b2e, var(--bark)); }
+.role-worker .welcome {
+  background:
+    radial-gradient(circle at 92% 10%, rgba(201, 149, 47, .35) 0, transparent 40%),
+    linear-gradient(125deg, #5b6b2e, #3b2f22);
+}
+
+.task-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 16px; }
+.task-grid > .empty { grid-column: 1 / -1; background: var(--surface); border: 1px dashed var(--line); border-radius: var(--radius); }
+.task-card {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 18px; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 8px;
+  border-top: 4px solid var(--matcha-300);
+}
+.task-card.prio-high { border-top-color: var(--danger); }
+.task-card.prio-medium { border-top-color: var(--ochre); }
+.task-card h3 { font-size: 16.5px; }
+.task-card h3 a { color: var(--ink); }
+.loc { display: flex; align-items: center; gap: 6px; margin: 0; }
+.loc svg { width: 14px; height: 14px; flex-shrink: 0; }
+.note-inline { background: var(--ochre-soft); padding: 8px 10px; border-radius: 8px; margin: 0; }
+.task-actions { margin-top: auto; padding-top: 12px; border-top: 1px solid var(--line); }
+.status-help { background: var(--lemonade-100); border-radius: 12px; padding: 14px 16px; font-size: 14px; margin-bottom: 16px; }
